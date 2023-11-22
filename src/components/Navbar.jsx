@@ -1,4 +1,4 @@
-import logo from '../assets/logo.svg'
+import logo from '../assets/images/logo.svg'
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
                 <li>Careers</li>
                 <li>About</li>
             </ul>
-            <GiHamburgerMenu className='w-10 h-10' />
+            <GiHamburgerMenu className='w-16 h-8' />
 
         </nav>
       
