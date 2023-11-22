@@ -10,12 +10,12 @@ const Navbar = () => {
                 <figure className='mr-10 '>
                     <img src={logo} alt="" />
                 </figure>
-                <ul className=' gap-x-4 hidden  md:flex md:justify-between pb-3'>
+                <ul className=' gap-x-4 hidden  md:flex md:justify-between pb-2'>
                     <li className='flex items-center justify-center gap-x-2'>
-                        Features <span className='pt-1'><img src={arrowdown} alt="" /></span>
+                        Features <span className=''><img src={arrowdown} alt="" /></span>
                     </li>
                     <li className='flex items-center justify-center gap-x-2'>
-                        Company <span className='pt-1'><img src={arrowdown} alt="" /></span>
+                        Company <span className=''><img src={arrowdown} alt="" /></span>
                     </li>
                     <li>Careers</li>
                     <li>About</li>
