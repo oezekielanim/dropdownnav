@@ -4,6 +4,7 @@ import arrowdown from '../assets/images/icon-arrow-down.svg'
 import arrowup from '../assets/images/icon-arrow-up.svg'
 import React from 'react'
 import Dropmenu from './Dropmenu'
+import Sidemenu from './Sidemenu'
 import {v4 as uuidv4} from 'uuid';import { useState } from 'react'
 
 
@@ -54,6 +55,7 @@ const companyMenu = [
 const Navbar = () => {
     const [featuresOpen, setFeaturesOpen] = useState(false);
     const [companyOpen, setCompanyOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false)
 
     // The two functions below handle hover states 
     function handleFeaturesMouseOver() {
@@ -71,6 +73,13 @@ const Navbar = () => {
       function handleCompanyMouseOut() {
         setCompanyOpen(false);
       }
+
+    //   function to handle menu click
+    function handleMenuClick(){
+        console.log("clicked");
+        setMenuOpen(!menuOpen)
+
+    }
 
   return (
     <header className='container pt-8 '>
@@ -104,7 +113,8 @@ const Navbar = () => {
                 <button className='border-2 px-5 py-2 border-gray-500 rounded-2xl block cursor-pointer'>Register</button>
             </div>
 
-            <img src={menuicon} alt="humburger menu" className='md:hidden'/>
+            <img onClick={handleMenuClick} src={menuicon} alt="humburger menu" className='md:hidden'/>
+            <Sidemenu open={menuOpen} setOpen={setMenuOpen}/>
         </nav>
       
     </header>
