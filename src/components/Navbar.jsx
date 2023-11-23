@@ -11,25 +11,25 @@ const featureMenu = [
     {
         "id": uuidv4(),
         "name": "Todo List",
-        "img": "/public/images/icon-todo.svg"
+        "img": "/images/icon-todo.svg"
        
     },
     {
         "id": uuidv4(),
         "name": "Calendar",
-        "img": "/public/images/icon-calendar.svg",
+        "img": "/images/icon-calendar.svg",
       
     },
     {
         "id":uuidv4() ,
         "name": "Reminders",
-        "img": "/public/images/icon-reminders.svg"
+        "img": "/images/icon-reminders.svg"
       
     },
     {
         "id": uuidv4(),
         "name": "Planning",
-        "img": "/public/images/icon-planning.svg"
+        "img": "/images/icon-planning.svg"
     }
 ]
 
