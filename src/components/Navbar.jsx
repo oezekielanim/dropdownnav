@@ -8,7 +8,7 @@ import Sidemenu from './Sidemenu'
 import {v4 as uuidv4} from 'uuid';import { useState } from 'react'
 
 
-const featureMenu = [
+export const featureMenu = [
     {
         "id": uuidv4(),
         "name": "Todo List",
@@ -34,7 +34,7 @@ const featureMenu = [
     }
 ]
 
-const companyMenu = [
+export const companyMenu = [
     {
         "id": uuidv4(),
         "name": "History",
@@ -51,6 +51,7 @@ const companyMenu = [
       
     }
 ]
+
 
 const Navbar = () => {
     const [featuresOpen, setFeaturesOpen] = useState(false);
@@ -74,7 +75,7 @@ const Navbar = () => {
         setCompanyOpen(false);
       }
 
-    //   function to handle menu click
+    //function to handle menu click
     function handleMenuClick(){
         console.log("clicked");
         setMenuOpen(!menuOpen)
