@@ -2,7 +2,6 @@ import logo from '../assets/images/logo.svg'
 import menuicon from '../assets/images/icon-menu.svg'
 import arrowdown from '../assets/images/icon-arrow-down.svg'
 import arrowup from '../assets/images/icon-arrow-up.svg'
-import React from 'react'
 import Dropmenu from './Dropmenu'
 import {v4 as uuidv4} from 'uuid';import { useState } from 'react'
 
@@ -104,7 +103,7 @@ const Navbar = () => {
                 <button className='border-2 px-5 py-2 border-gray-500 rounded-2xl block cursor-pointer'>Register</button>
             </div>
 
-            <img src={menuicon} alt="humburger menu" className='md:hidden'/>
+            <img src={menuicon} alt="humburger menu" className='md:hidden w-8 h-5'/>
         </nav>
       
     </header>
