@@ -82,7 +82,7 @@ const Navbar = () => {
     }
 
   return (
-    <header className='container pt-8 '>
+    <header className='container pt-8 mx-auto '>
         <nav className='flex px-10 justify-between text-sm'>
             <div className='flex justify-center items-center'>
                 <figure className='mr-10 '>
@@ -114,7 +114,7 @@ const Navbar = () => {
             </div>
 
 
-            <img onClick={handleMenuClick} src={menuicon} alt="humburger menu" className='md:hidden'/>
+            <img onClick={handleMenuClick} src={menuicon} alt="humburger menu" className='md:hidden w-8 h-5'/>
             <Sidemenu open={menuOpen} setOpen={setMenuOpen}/>
 
         </nav>
