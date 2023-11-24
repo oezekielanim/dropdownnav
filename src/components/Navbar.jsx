@@ -3,36 +3,37 @@ import menuicon from '../assets/images/icon-menu.svg'
 import arrowdown from '../assets/images/icon-arrow-down.svg'
 import arrowup from '../assets/images/icon-arrow-up.svg'
 import Dropmenu from './Dropmenu'
+import Sidemenu from './Sidemenu'
 import {v4 as uuidv4} from 'uuid';import { useState } from 'react'
 
 
-const featureMenu = [
+export const featureMenu = [
     {
         "id": uuidv4(),
         "name": "Todo List",
-        "img": "/public/images/icon-todo.svg"
+        "img": "/images/icon-todo.svg"
        
     },
     {
         "id": uuidv4(),
         "name": "Calendar",
-        "img": "/public/images/icon-calendar.svg",
+        "img": "/images/icon-calendar.svg",
       
     },
     {
         "id":uuidv4() ,
         "name": "Reminders",
-        "img": "/public/images/icon-reminders.svg"
+        "img": "/images/icon-reminders.svg"
       
     },
     {
         "id": uuidv4(),
         "name": "Planning",
-        "img": "/public/images/icon-planning.svg"
+        "img": "/images/icon-planning.svg"
     }
 ]
 
-const companyMenu = [
+export const companyMenu = [
     {
         "id": uuidv4(),
         "name": "History",
@@ -50,9 +51,11 @@ const companyMenu = [
     }
 ]
 
+
 const Navbar = () => {
     const [featuresOpen, setFeaturesOpen] = useState(false);
     const [companyOpen, setCompanyOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false)
 
     // The two functions below handle hover states 
     function handleFeaturesMouseOver() {
@@ -70,6 +73,13 @@ const Navbar = () => {
       function handleCompanyMouseOut() {
         setCompanyOpen(false);
       }
+
+    //function to handle menu click
+    function handleMenuClick(){
+        console.log("clicked");
+        setMenuOpen(!menuOpen)
+
+    }
 
   return (
     <header className='container pt-8 '>
@@ -103,7 +113,10 @@ const Navbar = () => {
                 <button className='border-2 px-5 py-2 border-gray-500 rounded-2xl block cursor-pointer'>Register</button>
             </div>
 
-            <img src={menuicon} alt="humburger menu" className='md:hidden w-8 h-5'/>
+
+            <img onClick={handleMenuClick} src={menuicon} alt="humburger menu" className='md:hidden'/>
+            <Sidemenu open={menuOpen} setOpen={setMenuOpen}/>
+
         </nav>
       
     </header>
