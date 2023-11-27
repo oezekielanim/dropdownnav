@@ -5,6 +5,7 @@ import arrowup from '../assets/images/icon-arrow-up.svg'
 import Dropmenu from './Dropmenu'
 import Sidemenu from './Sidemenu'
 import {v4 as uuidv4} from 'uuid';import { useState } from 'react'
+import useNavmenu from '../hooks/useNavmenu';
 
 
 export const featureMenu = [
@@ -52,51 +53,37 @@ export const companyMenu = [
 ]
 
 
+
+
 const Navbar = () => {
-    const [featuresOpen, setFeaturesOpen] = useState(false);
-    const [companyOpen, setCompanyOpen] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false)
+    const {
+        featuresOpen,
+        companyOpen,
+        menuOpen,
+        setMenuOpen,
+        handleFeaturesOnClick,
+        handleCompanyOnClick,
+        handleMenuClick,
+       
+      } = useNavmenu();
 
-    // The two functions below handle hover states 
-    function handleFeaturesMouseOver() {
-        setFeaturesOpen(true);
-      }
-    
-      function handleFeaturesMouseOut() {
-        setFeaturesOpen(false);
-      }
-    
-      function handleCompanyMouseOver() {
-        setCompanyOpen(true);
-      }
-    
-      function handleCompanyMouseOut() {
-        setCompanyOpen(false);
-      }
-
-    //function to handle menu click
-    function handleMenuClick(){
-        console.log("clicked");
-        setMenuOpen(!menuOpen)
-
-    }
 
   return (
-    <header className='container pt-8 mx-auto '>
+    <header className=' pt-8  '>
         <nav className='flex px-10 justify-between text-sm'>
             <div className='flex justify-center items-center'>
                 <figure className='mr-10 '>
                     <img src={logo} alt="" />
                 </figure>
                 <ul className=' gap-x-4 hidden  md:flex md:justify-between pb-2'>
-                    <li className='flex items-center justify-center gap-x-2 cursor-pointer' onMouseOver={handleFeaturesMouseOver} onMouseOut={handleFeaturesMouseOut}>
+                    <li className='flex items-center justify-center gap-x-2 cursor-pointer' onClick={handleFeaturesOnClick}>
                         Features <span className=''><img src={featuresOpen? arrowup: arrowdown} alt="icon" /></span>
                         {/*This is a dropdown menu */}
                         {featuresOpen &&<div className='hidden md:block max-w-fit text-xs text-gray py-5 px-4 font-thin shadow-xl rounded-xl absolute top-[68px] left-28 '>
                         <Dropmenu menuList={featureMenu}/>
                         </div>}
                     </li>
-                    <li className='flex items-center justify-center gap-x-2 cursor-pointer'  onMouseOver={handleCompanyMouseOver} onMouseOut={handleCompanyMouseOut}>
+                    <li className='flex items-center justify-center gap-x-2 cursor-pointer'  onClick={handleCompanyOnClick}>
                         Company <span className=''><img src={companyOpen? arrowup: arrowdown} alt="icon" /></span>
                         {/* This is a dropdown menu */}
                         {companyOpen && <div className='hidden md:block max-w-fit text-xs text-gray py-6 px-4 font-thin shadow-xl rounded-xl absolute top-[68px] left-64 '>

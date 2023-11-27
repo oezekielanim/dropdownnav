@@ -73,22 +73,26 @@ const Menu = ({setOpen})=>{
     handleFeaturesOnClick,
     handleCompanyOnClick,
   } = useNavmenu();
-  const [active, setActive] = useState(false);
+
+ 
  
   return (
     <div className='w-[65%] md:hidden h-full bg-white absolute right-0 z-20  '>
       <span onClick={()=>setOpen()}><img src={close} alt="close button" className=' absolute right-10 top-8 w-6 h-6' /></span>
       <ul className='space-y-4 absolute top-20 left-6 text-base text-gray'>
-      <li className='flex items-center justify-center gap-x-2 cursor-pointer' onClick={handleFeaturesOnClick}>
-                        Features <span className=''><img src={featuresOpen? arrowup: arrowdown} alt="icon" /></span>
+      <li className='flex items-center justify-center gap-x-2 cursor-pointer' onClick={
+        handleFeaturesOnClick
+      }>
+                        Features <span className=''><img src={(featuresOpen)? arrowup: arrowdown} alt="icon" /></span>
                         {/*This is a dropdown menu */}
                         {featuresOpen &&<div className=' md:block max-w-fit text-xs text-gray py-5 px-4 font-thin md:shadow-xl md:rounded-xl  '>
                         <Dropmenu menuList={featureMenu}/>
                         </div>}
         </li>
 
-        <li className='flex items-center justify-center gap-x-2 cursor-pointer'  onClick={handleCompanyOnClick}>
-                        Company <span className=''><img src={companyOpen? arrowup: arrowdown} alt="icon" /></span>
+        <li className='flex items-center justify-center gap-x-2 cursor-pointer'  onClick={
+          handleCompanyOnClick}>
+                        Company <span className=''><img src={(companyOpen) ? arrowup: arrowdown} alt="icon" /></span>
                         {/* This is a dropdown menu */}
                         {companyOpen && <div className='md:block max-w-fit text-xs text-gray py-6 px-4 font-thin md:shadow-xl md:rounded-xl '>
                         <Dropmenu menuList={companyMenu}/>

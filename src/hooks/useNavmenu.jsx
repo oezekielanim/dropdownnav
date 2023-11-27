@@ -7,6 +7,7 @@ const useNavmenu = () => {
   const [companyOpen, setCompanyOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+
   // Event handlers for hover states
   const handleFeaturesOnClick = () => {
     setFeaturesOpen(!featuresOpen);
@@ -33,7 +34,7 @@ const useNavmenu = () => {
     handleFeaturesOnClick,
     handleCompanyOnClick,
     handleMenuClick,
-    setMenuOpen
+    setMenuOpen,
   };
 };
 
